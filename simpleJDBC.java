@@ -45,6 +45,7 @@ class simpleJDBC {
 
     Connection conn = DriverManager.getConnection(url, your_userid, your_password);
     PlaceOrder q1Executor = new PlaceOrder(conn);
+    RestaurantAnalytics q2Executor = new RestaurantAnalytics(conn);
 
 
     Scanner scanner = new Scanner(System.in);
@@ -73,8 +74,7 @@ class simpleJDBC {
           q1Executor.placeOrder();
           break;
         case 2:
-          // Code for entering a skater for a competition
-          System.out.println("Entering skater for a competition...");
+          q2Executor.restaurantAnalytics();
           break;
         case 3:
           // Code for competition cancellation
